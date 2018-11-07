@@ -1,13 +1,18 @@
 package AOC.TP;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.Future;
 
 //Client/Servant
 public class Generator {
 	
-	Future f;
+	List<Future> futurList = new ArrayList<Future>();
+	List<Canal> canalList;
 	
-	public void Update(Canal c) {
-		f = c.update();
+	public void Update() throws Exception {
+		for(int i = 0; i < canalList.size(); ++i) {
+			futurList.set(i,  canalList.get(i).update());
+		}
 	}
 }
