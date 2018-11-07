@@ -17,9 +17,15 @@ public class Generator {
 	public void setValue(int value) {
 		this.value=value;
 	}
+	
+	public int getValue() {return this.value;}
+	
 	public void Update() throws Exception {
-		for(int i = 0; i < canalList.size(); ++i) {
-			futurList.set(i,  canalList.get(i).update());
+		for(Canal c : canalList) {
+			futurList.add(c.update());
+		}
+		for(Future f : futurList) {
+			//f.synchronize();
 		}
 	}
 }
