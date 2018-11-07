@@ -1,5 +1,6 @@
 package AOC.TP;
 import java.util.concurrent.Callable;
+import java.util.concurrent.Future;
 
 public class Update implements Callable<Future<Integer>> {
 
