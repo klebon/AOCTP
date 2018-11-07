@@ -1,6 +1,6 @@
 package AOC.TP;
 
 //Client/Servant
-public class Afficheur {
+public class Afficheur implements ObsGenAsync {
 
 }
