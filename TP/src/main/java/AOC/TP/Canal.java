@@ -1,6 +1,6 @@
 package AOC.TP;
 
 //Proxy
-public class Canal {
+public class Canal implements ObsGenAsync{
 
 }
