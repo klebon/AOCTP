@@ -3,7 +3,7 @@ package AOC.TP;
 
 //Proxy
 public class Canal implements ObsGenAsync{
-	public Future update() {
+	public Future<Integer> update() {
 		return null;
 	}
 }
