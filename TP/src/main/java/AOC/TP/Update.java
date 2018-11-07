@@ -8,5 +8,9 @@ public class Update implements Callable<Future<Integer>> {
 		// TODO Auto-generated method stub
 		return null;
 	}
+	
+	public Update() {
+		
+	}
 
 }
