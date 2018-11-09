@@ -17,7 +17,7 @@ public class App {
     	canaux = new ArrayList<ObsGenAsync>();
     	for(int i = 0; i < nbCanaux; i++) {
     		ObsGenAsync canal = new Canal(service);
-    		Obs aff = new Afficheur(canal);
+    		ObsGen aff = new Afficheur(canal);
     		canaux.add(canal);
     	}
 		Generator gen = new Generator(canaux);
