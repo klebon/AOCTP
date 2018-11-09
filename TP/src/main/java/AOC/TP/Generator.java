@@ -2,6 +2,7 @@ package AOC.TP;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 import java.util.concurrent.Future;
 
 //Client/Servant
@@ -12,14 +13,14 @@ public class Generator {
 	public Generator(List<Canal> canalList) {
 		super();
 		this.canalList = canalList;
-		this.futurList = new ArrayList<Future>();
+		this.futurList = new ArrayList<Future<Integer>>();
 		this.value = new Random().nextInt(max - min + 1) + min;
 		this.instance = this;
 	}
 	
 	public static Generator Get() {return instance;}
 	
-	private List<Future> futurList = new ArrayList<Future>();
+	private List<Future<Integer>> futurList = new ArrayList<Future<Integer>>();
 	private List<Canal> canalList;
 	private int value;
 	private static Generator instance;
@@ -37,7 +38,7 @@ public class Generator {
 		for(Canal c : canalList) {
 			futurList.add(c.update());
 		}
-		for(Future f : futurList) {
+		for(Future<Integer> f : futurList) {
 			//f.synchronize();
 		}
 	}

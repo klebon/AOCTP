@@ -1,5 +1,6 @@
 package AOC.TP;
 
+import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.ArrayList;
 import java.util.List;
@@ -7,12 +8,12 @@ import java.util.List;
 
 public class App {
 
-	private int nbCanaux = 4;
-	private List<Canal> canaux;
+	private static int nbCanaux = 4;
+	private static List<Canal> canaux;
 	
 	public static void main( String[] args )
     {
-    	ScheduledExecutorService service = new ScheduledExecutorService();
+    	ScheduledExecutorService service = Executors.newScheduledThreadPool(1);
     	canaux = new ArrayList<Canal>();
     	for(int i = 0; i < nbCanaux; i++) {
     		Canal canal = new Canal(service);
@@ -20,6 +21,11 @@ public class App {
     		canaux.add(canal);
     	}
 		Generator gen = new Generator(canaux);
-    	gen.Update();
+    	try {
+			gen.Update();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
     }
 }
