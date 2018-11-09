@@ -23,7 +23,6 @@ public class Canal implements ObsGenAsync{
 	
 	public Future<Integer> GetValue() throws InterruptedException, ExecutionException {
 		GetValue mi = new GetValue();
-		return (scheduler.schedule(mi, 500, TimeUnit.MILLISECONDS)).get();
-		
+		return (scheduler.schedule(mi, 500, TimeUnit.MILLISECONDS));
 	}
 }

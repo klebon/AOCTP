@@ -18,5 +18,6 @@ public class Afficheur implements ObsGen {
 	
 	public void GetValue() throws InterruptedException, ExecutionException {
 		f = c.GetValue();
+		value = (int)((Integer) f.get());
 	}
 }
