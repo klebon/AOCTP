@@ -10,6 +10,7 @@ public class Afficheur implements ObsGen {
 	public Afficheur(Canal c) {
 		super();
 		this.c = c;
+		this.c.setAfficheur(this);
 	}
 
 	private Canal c;
