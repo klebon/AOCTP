@@ -10,7 +10,7 @@ public class Generator {
 	
 	private static int max = 100, min = 1;
 	
-	public Generator(List<Canal> canalList) {
+	public Generator(List<ObsGenAsync> canalList) {
 		super();
 		this.canalList = canalList;
 		this.futurList = new ArrayList<Future<Integer>>();
@@ -21,7 +21,7 @@ public class Generator {
 	public static Generator Get() {return instance;}
 	
 	private List<Future<Integer>> futurList = new ArrayList<Future<Integer>>();
-	private List<Canal> canalList;
+	private List<ObsGenAsync> canalList;
 	private int value;
 	private static Generator instance;
 	
