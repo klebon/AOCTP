@@ -7,11 +7,13 @@ import java.util.concurrent.Future;
 //Client/Servant
 public class Generator {
 	
-	public Generator(List<Future> futurList, List<Canal> canalList, int value) {
+	private static int max = 100, min = 1;
+	
+	public Generator(List<Canal> canalList) {
 		super();
-		this.futurList = futurList;
 		this.canalList = canalList;
-		this.value = value;
+		this.futurList = new ArrayList<Future>();
+		this.value = new Random().nextInt(max - min + 1) + min;
 		this.instance = this;
 	}
 	

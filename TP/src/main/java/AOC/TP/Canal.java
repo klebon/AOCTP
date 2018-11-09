@@ -9,6 +9,11 @@ import java.util.concurrent.TimeUnit;
 public class Canal implements ObsGenAsync{
 	
 	ScheduledExecutorService scheduler;
+	private Afficheur monitor;
+	
+	public void setAfficheur(Afficheur afficheur) {
+		this.monitor = afficheur;
+	}
 		
 	public Future<Integer> update() throws Exception {
 		Update mi = new Update();
