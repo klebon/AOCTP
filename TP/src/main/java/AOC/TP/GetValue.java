@@ -1,10 +1,11 @@
 package AOC.TP;
 
 import java.util.concurrent.Callable;
+import java.util.concurrent.Future;
 
-public class GetValue implements Callable<Integer> {
+public class GetValue implements Callable<Future<Integer>> {
 
-	public Integer call() throws Exception {
+	public Future<Integer> call() throws Exception {
 		// TODO Auto-generated method stub
 		return null;
 	}
