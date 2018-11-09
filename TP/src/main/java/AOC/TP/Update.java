@@ -6,8 +6,7 @@ public class Update implements Callable<Future<Integer>> {
 
 	private Afficheur aff;
 	public Future<Integer> call() throws Exception {
-		aff.GetValue();
-		return null;
+		return aff.GetValue();
 	}
 	
 	public Update(Afficheur a) {

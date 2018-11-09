@@ -16,9 +16,10 @@ public class Afficheur implements ObsGen {
 	private int value;
 	private Future f;
 	
-	public void GetValue() throws InterruptedException, ExecutionException {
+	public Future<Integer> GetValue() throws InterruptedException, ExecutionException {
 		f = c.GetValue();
 		setValue((int)(Integer) f.get());
+		return f;
 	}
 	
 	private void setValue(int val) {
