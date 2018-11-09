@@ -18,6 +18,22 @@ public class Afficheur implements ObsGen {
 	
 	public void GetValue() throws InterruptedException, ExecutionException {
 		f = c.GetValue();
-		value = (int)((Integer) f.get());
+		setValue((int)(Integer) f.get());
+	}
+	
+	private void setValue(int val) {
+		value = val;
+	}
+	
+	private void display() {
+		system.out.println(" ------------------------ \n"
+				+ "|                        |\n"
+				+ "|                        |\n"
+				+ "|                        |\n"
+				+ "|           " + value + "           |\n"
+				+ "|                        |\n"
+				+ "|                        |\n"
+				+ " ------------------------ "
+				);
 	}
 }
