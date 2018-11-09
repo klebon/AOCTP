@@ -35,7 +35,7 @@ public class Generator {
 	public int getValue() {return this.value;}
 	
 	public void Update() throws Exception {
-		for(Canal c : canalList) {
+		for(ObsGenAsync c : canalList) {
 			futurList.add(c.update());
 		}
 	}
