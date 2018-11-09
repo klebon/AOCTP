@@ -38,8 +38,5 @@ public class Generator {
 		for(Canal c : canalList) {
 			futurList.add(c.update());
 		}
-		for(Future<Integer> f : futurList) {
-			//f.synchronize();
-		}
 	}
 }

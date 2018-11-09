@@ -7,13 +7,13 @@ import java.util.concurrent.Future;
 public class Afficheur implements ObsGen {
 
 	
-	public Afficheur(Canal c) {
+	public Afficheur(ObsGenAsync c) {
 		super();
 		this.c = c;
 		this.c.setAfficheur(this);
 	}
 
-	private Canal c;
+	private ObsGenAsync c;
 	private int value;
 	private Future f;
 	

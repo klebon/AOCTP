@@ -9,9 +9,9 @@ import java.util.concurrent.TimeUnit;
 public class Canal implements ObsGenAsync{
 	
 	ScheduledExecutorService scheduler;
-	private Afficheur monitor;
+	private ObsGen monitor;
 	
-	public void setAfficheur(Afficheur afficheur) {
+	public void setAfficheur(ObsGen afficheur) {
 		this.monitor = afficheur;
 	}
 		
