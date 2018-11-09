@@ -23,10 +23,11 @@ public class Afficheur implements ObsGen {
 	
 	private void setValue(int val) {
 		value = val;
+		display();
 	}
 	
 	private void display() {
-		system.out.println(" ------------------------ \n"
+		System.out.println(" ------------------------ \n"
 				+ "|                        |\n"
 				+ "|                        |\n"
 				+ "|                        |\n"
