@@ -16,7 +16,7 @@ public class Canal implements ObsGenAsync{
 	}
 		
 	public Future<Integer> update() throws Exception {
-		Update mi = new Update();
+		Update mi = new Update(monitor);
 		
 		return (scheduler.schedule(mi, 500, TimeUnit.MILLISECONDS)).get();
 		
