@@ -13,14 +13,14 @@ public class Generator {
 	public Generator(List<ObsGenAsync> canalList) {
 		super();
 		this.canalList = canalList;
-		this.futurList = new ArrayList<Future<Integer>>();
+		this.futurList = new ArrayList<Future<Void>>();
 		this.value = new Random().nextInt(max - min + 1) + min;
 		this.instance = this;
 	}
 	
-	public static Generator Get() {return instance;}
+	//public static Generator Get() {return instance;}
 	
-	private List<Future<Integer>> futurList = new ArrayList<Future<Integer>>();
+	private List<Future<Void>> futurList = new ArrayList<Future<Void>>();
 	private List<ObsGenAsync> canalList;
 	private int value;
 	private static Generator instance;
@@ -35,8 +35,11 @@ public class Generator {
 	public int getValue() {return this.value;}
 	
 	public void Update() throws Exception {
+		System.out.println("will udpate "+canalList.size()+" canals");
 		for(ObsGenAsync c : canalList) {
-			futurList.add(c.update());
+			//futurList.add();
+			c.update(this).get();
 		}
+		System.out.println("future added");
 	}
 }

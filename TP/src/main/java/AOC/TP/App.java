@@ -13,16 +13,18 @@ public class App {
 	
 	public static void main( String[] args )
     {
-    	ScheduledExecutorService service = Executors.newScheduledThreadPool(1);
+    	ScheduledExecutorService service = Executors.newScheduledThreadPool(10);
     	canaux = new ArrayList<ObsGenAsync>();
     	for(int i = 0; i < nbCanaux; i++) {
     		ObsGenAsync canal = new Canal(service);
     		ObsGen aff = new Afficheur(canal);
     		canaux.add(canal);
     	}
+    	System.out.println("created "+nbCanaux+" canaux");
 		Generator gen = new Generator(canaux);
     	try {
 			gen.Update();
+	    	System.out.println("gen updated");
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
