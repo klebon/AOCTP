@@ -11,4 +11,14 @@ public class CoherenceAtomique implements IAlgoDiffusion{
 	public CoherenceAtomique(List<ObsGenAsync> canals) {
 		this.canals = canals;
 	}
+
+	public void configure() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void execute() {
+		// TODO Auto-generated method stub
+		
+	}
 }
