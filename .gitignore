@@ -1,3 +1,5 @@
 /.metadata/
 TP/target/
 TP/target/classes/AOC/TP/*.class
+
+*.class
