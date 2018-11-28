@@ -5,41 +5,42 @@ import java.util.List;
 import java.util.Random;
 import java.util.concurrent.Future;
 
+import coherences.CoherenceAtomique;
+import coherences.IAlgoDiffusion;
+
 //Client/Servant
 public class Generator {
-	
-	private static int max = 100, min = 1;
-	
-	public Generator(List<ObsGenAsync> canalList) {
-		super();
-		this.canalList = canalList;
-		this.futurList = new ArrayList<Future<Void>>();
-		this.value = new Random().nextInt(max - min + 1) + min;
-		this.instance = this;
-	}
-	
-	//public static Generator Get() {return instance;}
-	
-	private List<Future<Void>> futurList = new ArrayList<Future<Void>>();
-	private List<ObsGenAsync> canalList;
-	private int value;
-	private static Generator instance;
-	
-	public Generator(int value) {
-		this.value=value;
-		}
-	public void setValue(int value) {
-		this.value=value;
-	}
-	
-	public int getValue() {return this.value;}
-	
-	public void Update() throws Exception {
-		System.out.println("will udpate "+canalList.size()+" canals");
-		for(ObsGenAsync c : canalList) {
-			//futurList.add();
-			c.update(this).get();
-		}
-		System.out.println("future added");
-	}
+    
+    private static int max = 100, min = 1;
+    
+    public Generator(List<ObsGenAsync> canalList) {
+        super();
+        this.canalList = canalList;
+        this.futurList = new ArrayList<Future<Void>>();
+        this.value = new Random().nextInt(max - min + 1) + min;
+        this.instance = this;
+        this.coherence = new CoherenceAtomique(this, canalList);
+    }
+    
+    //public static Generator Get() {return instance;}
+    
+    private List<Future<Void>> futurList = new ArrayList<Future<Void>>();
+    private List<ObsGenAsync> canalList;
+    private int value;
+    private static Generator instance;
+    
+    private IAlgoDiffusion coherence;
+    
+    public Generator(int value) {
+        this.value=value;
+        }
+    public void setValue(int value) {
+        this.value=value;
+    }
+    
+    public int getValue() {return this.value;}
+    
+    public void Update() throws Exception {
+        coherence.execute();
+    }
 }
