@@ -36,6 +36,18 @@ public class CoherenceAtomique implements IAlgoDiffusion{
 				e.printStackTrace();
 			}
         }
-        System.out.println("future added");
+        executeFutureList();
+    }
+    
+    private void executeFutureList() {
+        System.out.println("future get");
+    	for(Future f : futurList) {
+    		 try {
+ 				f.get();
+ 			} catch (Exception e) {
+ 				// TODO Auto-generated catch block
+ 				e.printStackTrace();
+ 			}
+    	}
     }
 }
