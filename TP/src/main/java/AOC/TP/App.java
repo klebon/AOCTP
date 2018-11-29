@@ -16,7 +16,7 @@ public class App {
     	ScheduledExecutorService service = Executors.newScheduledThreadPool(10);
     	canaux = new ArrayList<ObsGenAsync>();
     	for(int i = 0; i < nbCanaux; i++) {
-    		ObsGenAsync canal = new Canal(service);
+    		ObsGenAsync canal = new Canal(service, 500);
     		ObsGen aff = new Afficheur(canal);
     		canaux.add(canal);
     	}
