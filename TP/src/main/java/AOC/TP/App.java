@@ -4,6 +4,8 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
+
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -20,8 +22,10 @@ public class App {
     {
     	ScheduledExecutorService service = Executors.newScheduledThreadPool(10);
     	canaux = new ArrayList<ObsGenAsync>();
+    	int timeToTravel;
     	for(int i = 0; i < nbCanaux; i++) {
-    		ObsGenAsync canal = new Canal(service, 500);
+    		timeToTravel =  new Random().nextInt(1000 - 300) + 300;
+    		ObsGenAsync canal = new Canal(service, timeToTravel);
     		ObsGen aff = new Afficheur(canal);
     		canaux.add(canal);
     	}
