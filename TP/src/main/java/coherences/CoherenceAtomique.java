@@ -4,18 +4,16 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.Future;
 
-import AOC.TP.Generator;
+import AOC.TP.IGenerator;
 import AOC.TP.ObsGenAsync;
 
 public class CoherenceAtomique implements IAlgoDiffusion{
 
     private List<ObsGenAsync> canalList;
-    private Generator generator;
     private List<Future<Void>> futurList;
     
-    public CoherenceAtomique(Generator g, List<ObsGenAsync> canals) {
+    public CoherenceAtomique(List<ObsGenAsync> canals) {
         this.canalList = canals;
-        this.generator = g;
         this.futurList = new ArrayList<Future<Void>>();
     }
 
@@ -24,13 +22,13 @@ public class CoherenceAtomique implements IAlgoDiffusion{
         
     }
 
-    public void execute() {
+    public void execute(IGenerator gen) {
         // TODO Auto-generated method stub
        // System.out.println("will udpate "+canalList.size()+" canals");
         for(ObsGenAsync c : canalList) {
             //futurList.add();
             try {
-				futurList.add(c.update(generator));
+				futurList.add(c.update(gen));
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();

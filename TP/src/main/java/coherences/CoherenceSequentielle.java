@@ -3,7 +3,7 @@ package coherences;
 import java.util.List;
 import java.util.concurrent.Future;
 
-import AOC.TP.Generator;
+import AOC.TP.IGenerator;
 import AOC.TP.ObsGenAsync;
 
 public class CoherenceSequentielle  implements IAlgoDiffusion {
@@ -11,13 +11,11 @@ public class CoherenceSequentielle  implements IAlgoDiffusion {
 	int[] values = new int[10];
 	int inde= 0;
 	private List<ObsGenAsync> canalList;
-	private Generator generator;
 	private List<Future<Void>> futurList;
 	
-	public CoherenceSequentielle(List<ObsGenAsync> canalList, Generator generator,
+	public CoherenceSequentielle(List<ObsGenAsync> canalList,
 			List<Future<Void>> futurList) {
 		this.canalList = canalList;
-		this.generator = generator;
 		this.futurList = futurList;
 	}
 
@@ -27,13 +25,13 @@ public class CoherenceSequentielle  implements IAlgoDiffusion {
 		
 	}
 
-	public void execute() {
+	public void execute(IGenerator gen) {
         // TODO Auto-generated method stub
         System.out.println("will udpate "+canalList.size()+" canals");
         for(ObsGenAsync c : canalList) {
             //futurList.add();
             try {
-				futurList.add(c.update(generator));
+				futurList.add(c.update(gen));
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
