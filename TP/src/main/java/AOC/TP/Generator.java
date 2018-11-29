@@ -37,6 +37,16 @@ public class Generator {
     public void setValue(int value) {
         this.value=value;
     }
+    public void go() {
+    	while(true) {
+    		this.value = new Random().nextInt(max - min + 1) + min;
+    		try {
+				this.Update();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+    	}
+    }
     
     public int getValue() {return this.value;}
     

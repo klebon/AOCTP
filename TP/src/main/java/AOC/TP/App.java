@@ -23,10 +23,7 @@ public class App {
     	//System.out.println("created "+nbCanaux+" canaux");
 		Generator gen = new Generator(canaux);
     	try {
-    		while(true) {
-    			gen.Update();
-    			gen.setValue(gen.getValue()+1);
-    		}
+    		gen.go();
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
