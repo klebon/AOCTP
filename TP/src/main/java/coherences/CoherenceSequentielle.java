@@ -28,10 +28,11 @@ public class CoherenceSequentielle  implements IAlgoDiffusion {
 	public void execute(IGenerator gen) {
         // TODO Auto-generated method stub
         System.out.println("will udpate "+canalList.size()+" canals");
+        IGenerator memento = new MementoGenerator(gen);
         for(ObsGenAsync c : canalList) {
             //futurList.add();
             try {
-				futurList.add(c.update(gen));
+				futurList.add(c.update(memento));
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
