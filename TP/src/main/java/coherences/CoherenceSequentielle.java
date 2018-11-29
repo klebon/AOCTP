@@ -1,5 +1,6 @@
 package coherences;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.Future;
 
@@ -13,10 +14,9 @@ public class CoherenceSequentielle  implements IAlgoDiffusion {
 	private List<ObsGenAsync> canalList;
 	private List<Future<Void>> futurList;
 	
-	public CoherenceSequentielle(List<ObsGenAsync> canalList,
-			List<Future<Void>> futurList) {
+	public CoherenceSequentielle(List<ObsGenAsync> canalList) {
 		this.canalList = canalList;
-		this.futurList = futurList;
+		this.futurList = new ArrayList<Future<Void>>();
 	}
 
 	
