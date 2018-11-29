@@ -9,7 +9,7 @@ import coherences.CoherenceAtomique;
 import coherences.IAlgoDiffusion;
 
 //Client/Servant
-public class Generator {
+public class Generator implements IGenerator {
     
     private static int max = 100, min = 1;
     

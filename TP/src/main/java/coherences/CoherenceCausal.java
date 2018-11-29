@@ -1,5 +1,7 @@
 package coherences;
 
+import AOC.TP.IGenerator;
+
 public class CoherenceCausal  implements IAlgoDiffusion {
 
 	public void configure() {
@@ -7,7 +9,7 @@ public class CoherenceCausal  implements IAlgoDiffusion {
 		
 	}
 
-	public void execute() {
+	public void execute(IGenerator gen) {
 		// TODO Auto-generated method stub
 		
 	}
