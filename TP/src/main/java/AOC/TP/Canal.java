@@ -13,14 +13,14 @@ public class Canal implements ObsGenAsync{
 	private ObsGen monitor;
 	
 	public void setAfficheur(ObsGen afficheur) {
-		System.out.println("afficher set ot the canal");
+	//	System.out.println("afficher set ot the canal");
 		this.monitor = afficheur;
 	}
 		
 	public Future<Void> update(Generator g) throws Exception {
 		Update mi = new Update(monitor);
 		this.generator = g;
-		System.out.println("schedule update");
+		//System.out.println("schedule update");
 
 		return (scheduler.schedule(mi, 500, TimeUnit.MILLISECONDS));
 		
@@ -32,7 +32,7 @@ public class Canal implements ObsGenAsync{
 	
 	public Future<Integer> GetValue() throws InterruptedException, ExecutionException {
 		GetValue mi = new GetValue(generator);
-		System.out.println("schedule getValue");
+		//System.out.println("schedule getValue");
 		return (scheduler.schedule(mi, 500, TimeUnit.MILLISECONDS));
 	}
 }

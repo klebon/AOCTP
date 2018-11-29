@@ -19,7 +19,7 @@ public class Afficheur implements ObsGen {
 	
 	public Future<Integer> GetValue() throws InterruptedException, ExecutionException {
 		f = c.GetValue();
-		System.out.println("future of getValue set");
+		//System.out.println("future of getValue set");
 		try {
 			setValue((int)(Integer) f.get());
 		}
@@ -30,13 +30,13 @@ public class Afficheur implements ObsGen {
 		catch(ExecutionException e) {
 			e.printStackTrace();
 		}
-		System.out.println("Get terminated");
+		//System.out.println("Get terminated");
 		return f;
 	}
 	
 	private void setValue(int val) {
 		value = val;
-		System.out.println("value set to "+val);
+		//System.out.println("value set to "+val);
 		display();
 	}
 	

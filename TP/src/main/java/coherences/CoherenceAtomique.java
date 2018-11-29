@@ -26,7 +26,7 @@ public class CoherenceAtomique implements IAlgoDiffusion{
 
     public void execute() {
         // TODO Auto-generated method stub
-        System.out.println("will udpate "+canalList.size()+" canals");
+       // System.out.println("will udpate "+canalList.size()+" canals");
         for(ObsGenAsync c : canalList) {
             //futurList.add();
             try {
@@ -40,7 +40,7 @@ public class CoherenceAtomique implements IAlgoDiffusion{
     }
     
     private void executeFutureList() {
-        System.out.println("future get");
+      //  System.out.println("future get");
     	for(Future f : futurList) {
     		 try {
  				f.get();

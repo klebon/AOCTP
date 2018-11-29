@@ -14,7 +14,7 @@ public class GetValue implements Callable<Integer> {
 		
 	public Integer call() throws Exception {
 		
-		System.out.println("call Getvalue");
+		//System.out.println("call Getvalue");
 		Integer value = (Integer) generator.getValue();		
 
 		//Integer value = (Integer) Generator.Get().getValue();		

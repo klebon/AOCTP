@@ -6,14 +6,14 @@ public class Update implements Callable<Void> {
 
 	private ObsGen aff;
 	public Void call() throws Exception {
-		System.out.println("afficheur called");
+	//	System.out.println("afficheur called");
 		aff.GetValue();
 		return null;
 	}
 	
 	public Update(ObsGen monitor) {
 		this.aff = monitor;
-		System.out.println("afficheur set");
+	//	System.out.println("afficheur set");
 	}
 
 }

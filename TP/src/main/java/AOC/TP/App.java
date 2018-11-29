@@ -20,11 +20,13 @@ public class App {
     		ObsGen aff = new Afficheur(canal);
     		canaux.add(canal);
     	}
-    	System.out.println("created "+nbCanaux+" canaux");
+    	//System.out.println("created "+nbCanaux+" canaux");
 		Generator gen = new Generator(canaux);
     	try {
-			gen.Update();
-	    	System.out.println("gen updated");
+    		while(true) {
+    			gen.Update();
+    			gen.setValue(gen.getValue()+1);
+    		}
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
