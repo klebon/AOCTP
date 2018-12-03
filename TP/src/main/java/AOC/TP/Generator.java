@@ -33,6 +33,15 @@ public class Generator implements IGenerator {
     
     private IAlgoDiffusion coherence;
     
+    public void setCoherence(String s) {
+    	if(s.equals("Seq")) {
+    		this.coherence=new CoherenceSequentielle(canalList);
+    	}
+    	else {
+    		this.coherence=new CoherenceAtomique(canalList);
+    	}
+    }
+    
     public Generator(int value) {
         this.value=value;
         }

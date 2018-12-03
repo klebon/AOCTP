@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+
+
+<AnchorPane prefHeight="800.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1" fx:controller="AOC.TP.Modele">
+   <children>
+      <GridPane prefHeight="800.0" prefWidth="1080.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+
+         <children>
+            <HBox fillHeight="false" GridPane.rowIndex ="2">
+               <children>
+                  <Button fx:id="Go" mnemonicParsing="false" onMouseClicked="#start" text="Go" />
+                  <RadioButton fx:id="AtomiStrat" mnemonicParsing="false" onAction="#GoToAtom" text="Atomic">
+                     <HBox.margin>
+                        <Insets top="3.0" />
+                     </HBox.margin>
+                  </RadioButton>
+                  <RadioButton fx:id="SeqStrat" mnemonicParsing="false" onAction="#GoToSeq" text="Sequential">
+                     <HBox.margin>
+                        <Insets top="3.0" />
+                     </HBox.margin>
+                  </RadioButton>
+               </children>
+            </HBox>
+            <HBox prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="1">
+               <children>
+                  <VBox prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <Label text="Afficheur 1" />
+                        <Label fx:id="Afficheur1" text="Label" />
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <Label text="Afficheur 2" />
+                        <Label fx:id="Afficheur2" text="Label" />
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <Label text="Afficheur 3" />
+                        <Label fx:id="Afficheur3" text="Label" />
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <Label text="Afficheur 4" />
+                        <Label fx:id="Afficheur4" text="Label" />
+                     </children>
+                  </VBox>
+               </children>
+               <padding>
+                  <Insets left="20.0" />
+               </padding>
+            </HBox>
+         </children>
+      </GridPane>
+   </children>
+</AnchorPane>

@@ -25,4 +25,10 @@ public class MementoGenerator implements IGenerator {
 		
 	}
 
+	public void go() {
+		// TODO Auto-generated method stub
+		
+	}
+	
+
 }

@@ -14,7 +14,6 @@ public class Canal implements ObsGenAsync{
 	private int time;
 	
 	public void setAfficheur(ObsGen afficheur) {
-	//	System.out.println("afficher set ot the canal");
 		this.monitor = afficheur;
 	}
 		

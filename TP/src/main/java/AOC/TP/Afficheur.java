@@ -1,18 +1,21 @@
 package AOC.TP;
 
+import javafx.scene.control.Label;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Future;
+import javafx.application.Platform;
 
 //Client/Servant
 public class Afficheur implements ObsGen {
 
 	
-	public Afficheur(ObsGenAsync c) {
+	public Afficheur(ObsGenAsync c, Label l) {
 		super();
 		this.c = c;
 		this.c.setAfficheur(this);
+		this.l=l;
 	}
-
+	private Label l;
 	private ObsGenAsync c;
 	private int value;
 	private Future f;
@@ -36,8 +39,9 @@ public class Afficheur implements ObsGen {
 	
 	private void setValue(int val) {
 		value = val;
+		Platform.runLater(() ->l.setText(String.valueOf(val)));
 		//System.out.println("value set to "+val);
-		display();
+		//display();
 	}
 	
 	private void display() {
