@@ -12,13 +12,13 @@ public class CoherenceAtomique implements IAlgoDiffusion{
     private List<ObsGenAsync> canalList;
     private List<Future<Void>> futurList;
     
-    public CoherenceAtomique(List<ObsGenAsync> canals) {
-        this.canalList = canals;
+    public CoherenceAtomique() {
         this.futurList = new ArrayList<Future<Void>>();
     }
 
-    public void configure() {
+    public void configure(List<ObsGenAsync> canals) {
         // TODO Auto-generated method stub
+        this.canalList = canals;
         
     }
 
