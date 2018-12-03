@@ -6,5 +6,5 @@ public interface ObsGenAsync extends ObsGen{
 	public Future<Void> update(IGenerator g) throws Exception;
 
 	public void setAfficheur(ObsGen afficheur);
-	
+	public ObsGen getAfficheur();
 }

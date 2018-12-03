@@ -50,5 +50,4 @@ public class CoherenceSequentielle  implements IAlgoDiffusion {
  			}
     	}
     }
-
 }

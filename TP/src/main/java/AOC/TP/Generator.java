@@ -6,6 +6,7 @@ import java.util.Random;
 import java.util.concurrent.Future;
 
 import coherences.CoherenceAtomique;
+import coherences.CoherenceCausal;
 import coherences.CoherenceSequentielle;
 import coherences.IAlgoDiffusion;
 
@@ -21,7 +22,8 @@ public class Generator implements IGenerator {
         this.value = new Random().nextInt(max - min + 1) + min;
         this.instance = this;
         //this.coherence = new CoherenceAtomique(canalList);
-        this.coherence = new CoherenceSequentielle();
+        //this.coherence = new CoherenceSequentielle();
+        this.coherence = new CoherenceCausal();
         coherence.configure(canalList);
     }
     
