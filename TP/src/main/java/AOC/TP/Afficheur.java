@@ -45,10 +45,10 @@ public class Afficheur implements ObsGen {
 	}
 	
 	private void display() {
-		nbDisplay++;
+		//nbDisplay++;
 		String valueToString = this.value < 10 ? " " : "";
 		System.out.println(" ------------------------ \n"
-				+ "|" + nbDisplay + "                      |\n"
+			//	+ "|" + nbDisplay + "                      |\n"
 				+ "|                        |\n"
 				+ "|                        |\n"
 				+ "|           " + value + valueToString + "           |\n"

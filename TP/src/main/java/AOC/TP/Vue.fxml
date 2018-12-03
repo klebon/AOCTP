@@ -34,6 +34,11 @@
                         <Insets top="3.0" />
                      </HBox.margin>
                   </RadioButton>
+                     <RadioButton fx:id="CausStrat" mnemonicParsing="false" onAction="#GoToCaus" text="Causal">
+                     <HBox.margin>
+                        <Insets top="3.0" />
+                     </HBox.margin>
+                  </RadioButton>
                </children>
             </HBox>
             <HBox prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="1">

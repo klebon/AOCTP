@@ -38,10 +38,16 @@ public class Generator implements IGenerator {
     
     public void setCoherence(String s) {
     	if(s.equals("Seq")) {
-    		this.coherence=new CoherenceSequentielle(canalList);
+    		this.coherence=new CoherenceSequentielle();
+    		this.coherence.configure(canalList);
+    	}
+    	else if (s.equals("Caus")){
+    		this.coherence=new CoherenceCausal();
+    		this.coherence.configure(canalList);
     	}
     	else {
-    		this.coherence=new CoherenceAtomique(canalList);
+     		this.coherence=new CoherenceAtomique();
+    		this.coherence.configure(canalList);
     	}
     }
     

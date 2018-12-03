@@ -20,24 +20,8 @@ public class App extends Application{
 	
 	public static void main( String[] args )
     {
-    	ScheduledExecutorService service = Executors.newScheduledThreadPool(Integer.MAX_VALUE);
-
-    	canaux = new ArrayList<ObsGenAsync>();
-    	int timeToTravel;
-    	for(int i = 0; i < nbCanaux; i++) {
-    		timeToTravel =  new Random().nextInt(10 - 5) + 5;
-    		ObsGenAsync canal = new Canal(service, timeToTravel);
-    		ObsGen aff = new Afficheur(canal);
-    		canaux.add(canal);
-    	}
-    	//System.out.println("created "+nbCanaux+" canaux");
-		Generator gen = new Generator(canaux);
-    	try {
-    		gen.go();
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}*/
+    	launch(args);
+    	
     }
 
 	@SuppressWarnings("restriction")

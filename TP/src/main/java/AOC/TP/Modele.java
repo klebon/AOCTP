@@ -22,6 +22,8 @@ public class Modele {
     private RadioButton AtomiStrat;
     @FXML
     private RadioButton SeqStrat;
+    @FXML 
+    private RadioButton CausStrat;
     @FXML
     private Label Afficheur3;
     @FXML
@@ -40,12 +42,12 @@ public class Modele {
     public void initialize() {
     	go=true;
     	Go.setDisable(false);
-    	service = Executors.newScheduledThreadPool(10);
+    	service = Executors.newScheduledThreadPool(Integer.MAX_VALUE);
     	canaux = new ArrayList<ObsGenAsync>();
     	afficheur = new ArrayList<ObsGen>();
     	int timeToTravel;
     	for(int i = 0; i < nbCanaux; i++) {
-    		timeToTravel =  new Random().nextInt(1000 - 300) + 300;
+    		timeToTravel =  new Random().nextInt(3 - 1) + 1;
     		ObsGenAsync canal = new Canal(service, timeToTravel);
     		canaux.add(canal);
     	}
@@ -61,6 +63,7 @@ public class Modele {
 		generator = gen;
 		AtomiStrat.setSelected(true);
 		SeqStrat.setSelected(false);
+		CausStrat.setSelected(false);
     }
     
     @FXML
@@ -75,12 +78,21 @@ public class Modele {
     	AtomiStrat.setSelected(true);
     	System.out.println("JE SUIS PASSÉ ICI");
     	SeqStrat.setSelected(false);
+    	CausStrat.setSelected(false);
     }
     @FXML
     private void GoToSeq() {
     	generator.setCoherence("Seq");
     	SeqStrat.setSelected(true);
     	AtomiStrat.setSelected(false);
+    	CausStrat.setSelected(false);
+    }
+    @FXML
+    private void GoToCaus() {
+    	generator.setCoherence("Caus");
+    	SeqStrat.setSelected(false);
+    	AtomiStrat.setSelected(false);
+    	CausStrat.setSelected(true);
     }
 }
 
