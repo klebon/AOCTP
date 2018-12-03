@@ -9,19 +9,17 @@ import AOC.TP.ObsGenAsync;
 
 public class CoherenceSequentielle  implements IAlgoDiffusion {
 
-	int[] values = new int[10];
-	int inde= 0;
 	private List<ObsGenAsync> canalList;
 	private List<Future<Void>> futurList;
 	
-	public CoherenceSequentielle(List<ObsGenAsync> canalList) {
-		this.canalList = canalList;
+	public CoherenceSequentielle() {
 		this.futurList = new ArrayList<Future<Void>>();
 	}
 
 	
-	public void configure() {
+	public void configure(List<ObsGenAsync> canalList) {
 		// TODO Auto-generated method stub
+		this.canalList = canalList;
 		
 	}
 

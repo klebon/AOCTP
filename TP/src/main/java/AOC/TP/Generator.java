@@ -21,7 +21,8 @@ public class Generator implements IGenerator {
         this.value = new Random().nextInt(max - min + 1) + min;
         this.instance = this;
         //this.coherence = new CoherenceAtomique(canalList);
-        this.coherence = new CoherenceSequentielle(canalList);
+        this.coherence = new CoherenceSequentielle();
+        coherence.configure(canalList);
     }
     
     //public static Generator Get() {return instance;}
