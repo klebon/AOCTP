@@ -24,7 +24,7 @@ public class Canal implements ObsGenAsync{
 		this.generator = g;
 		//System.out.println("schedule update");
 
-		return (scheduler.schedule(mi, time, TimeUnit.SECONDS));
+		return (scheduler.schedule(mi, time, TimeUnit.MILLISECONDS));
 		
 	}
 	
@@ -36,7 +36,7 @@ public class Canal implements ObsGenAsync{
 	public Future<Integer> GetValue() throws InterruptedException, ExecutionException {
 		GetValue mi = new GetValue(generator);
 		//System.out.println("schedule getValue");
-		return (scheduler.schedule(mi, time, TimeUnit.SECONDS));
+		return (scheduler.schedule(mi, time, TimeUnit.MILLISECONDS));
 	}
 
 }

@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 import java.util.concurrent.Future;
+import java.util.concurrent.TimeUnit;
 
 import coherences.CoherenceAtomique;
 import coherences.CoherenceCausal;
@@ -63,6 +64,12 @@ public class Generator implements IGenerator {
     		try {
 				this.Update();
 			} catch (Exception e) {
+				e.printStackTrace();
+			}
+    		try {
+				TimeUnit.MILLISECONDS.sleep(new Random().nextInt((300 - 100) + 400));
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
     	}
