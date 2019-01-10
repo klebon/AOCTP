@@ -31,7 +31,6 @@ public class App extends Application{
 		 Parent root = FXMLLoader.load(getClass().getResource("Vue.fxml"));
 	     primaryStage.setScene(new Scene(root, 500, 250));
 	     primaryStage.show();
-		  
-	       		
+	     primaryStage.setOnCloseRequest(e -> System.exit(0));
 	}
 }
