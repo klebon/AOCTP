@@ -3,8 +3,8 @@ package AOC.TP;
 import java.util.concurrent.Future;
 
 public interface ObsGenAsync extends ObsGen{
-	public Future<Void> update(IGenerator g) throws Exception;
+	public Future<Void> Update(IGenerator g) throws Exception;
 
-	public void setAfficheur(ObsGen afficheur);
-	public ObsGen getAfficheur();
+	public void SetAfficheur(ObsGen afficheur);
+	public ObsGen GetAfficheur();
 }

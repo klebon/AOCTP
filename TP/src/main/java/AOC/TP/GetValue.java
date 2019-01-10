@@ -6,7 +6,7 @@ import java.util.concurrent.Future;
 
 public class GetValue implements Callable<Integer> {
 
-	IGenerator generator;
+	private IGenerator generator;
 	
 	public GetValue(IGenerator g) {
 		this.generator = g;

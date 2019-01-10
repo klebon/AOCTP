@@ -8,18 +8,18 @@ import java.util.concurrent.TimeUnit;
 //Proxy
 public class Canal implements ObsGenAsync{
 	
-	IGenerator generator;
-	ScheduledExecutorService scheduler;
+	private IGenerator generator;
+	private ScheduledExecutorService scheduler;
 	private ObsGen monitor;
 	private int time;
 	
-	public ObsGen getAfficheur() { return this.monitor;}
+	public ObsGen GetAfficheur() { return this.monitor;}
 	
-	public void setAfficheur(ObsGen afficheur) {
+	public void SetAfficheur(ObsGen afficheur) {
 		this.monitor = afficheur;
 	}
 		
-	public Future<Void> update(IGenerator g) throws Exception {
+	public Future<Void> Update(IGenerator g) throws Exception {
 		Update mi = new Update(monitor);
 		this.generator = g;
 		//System.out.println("schedule update");

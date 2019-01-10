@@ -7,5 +7,4 @@ public interface IGenerator {
 	public void go();
 	
 	public void Update() throws Exception;
-	
 }

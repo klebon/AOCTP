@@ -11,20 +11,20 @@ public class Afficheur implements ObsGen {
 	
 	public Afficheur(ObsGenAsync c, Label l) {
 		super();
-		this.c = c;
-		this.c.setAfficheur(this);
-		this.l=l;
+		this.canal = c;
+		this.canal.SetAfficheur(this);
+		this.label=l;
 	}
-	private Label l;
-	private ObsGenAsync c;
+	private Label label;
+	private ObsGenAsync canal;
 	private int value;
-	private Future f;
+	private Future future;
 	
 	public Future<Integer> GetValue() throws InterruptedException, ExecutionException {
-		f = c.GetValue();
+		future = canal.GetValue();
 		//System.out.println("future of getValue set");
 		try {
-			setValue((int)(Integer) f.get());
+			setValue((int)(Integer) future.get());
 		}
 		catch (InterruptedException e){
 			e.addSuppressed(e);
@@ -34,12 +34,12 @@ public class Afficheur implements ObsGen {
 			e.printStackTrace();
 		}
 		//System.out.println("Get terminated");
-		return f;
+		return future;
 	}
 	
 	private void setValue(int val) {
 		value = val;
-		Platform.runLater(() ->l.setText(String.valueOf(val)));
+		Platform.runLater(() ->label.setText(String.valueOf(val)));
 		//System.out.println("value set to "+val);
 		//display();
 	}

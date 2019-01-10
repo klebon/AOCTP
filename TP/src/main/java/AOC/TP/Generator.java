@@ -15,13 +15,15 @@ import coherences.IAlgoDiffusion;
 public class Generator implements IGenerator {
     
     private static int max = 100, min = 1;
+    private List<ObsGenAsync> canalList;
+    private int value;
+    
+    private IAlgoDiffusion coherence;
     
     public Generator(List<ObsGenAsync> canalList) {
         super();
         this.canalList = canalList;
-        this.futurList = new ArrayList<Future<Void>>();
         this.value = new Random().nextInt(max - min + 1) + min;
-        this.instance = this;
         //this.coherence = new CoherenceAtomique(canalList);
         //this.coherence = new CoherenceSequentielle();
         this.coherence = new CoherenceCausal();
@@ -29,13 +31,6 @@ public class Generator implements IGenerator {
     }
     
     //public static Generator Get() {return instance;}
-    
-    private List<Future<Void>> futurList = new ArrayList<Future<Void>>();
-    private List<ObsGenAsync> canalList;
-    private int value;
-    private static Generator instance;
-    
-    private IAlgoDiffusion coherence;
     
     public void setCoherence(String s) {
     	if(s.equals("Seq")) {

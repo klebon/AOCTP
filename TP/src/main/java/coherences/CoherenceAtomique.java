@@ -7,9 +7,8 @@ import java.util.concurrent.Future;
 import AOC.TP.IGenerator;
 import AOC.TP.ObsGenAsync;
 
-public class CoherenceAtomique implements IAlgoDiffusion{
+public class CoherenceAtomique extends Coherence{
 
-    private List<ObsGenAsync> canalList;
     private List<Future<Void>> futurList;
     
     public CoherenceAtomique() {
@@ -28,7 +27,7 @@ public class CoherenceAtomique implements IAlgoDiffusion{
         for(ObsGenAsync c : canalList) {
             //futurList.add();
             try {
-				futurList.add(c.update(gen));
+				futurList.add(c.Update(gen));
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
