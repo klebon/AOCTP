@@ -6,9 +6,9 @@ import java.util.concurrent.Future;
 import javafx.application.Platform;
 
 //Client/Servant
-public class Afficheur implements ObsGen {
+public class Monitor implements ObsGen {
 
-	public Afficheur(ObsGenAsync c, Label l) {
+	public Monitor(ObsGenAsync c, Label l) {
 		super();
 		this.canal = c;
 		this.canal.SetAfficheur(this);

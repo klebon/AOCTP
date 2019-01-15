@@ -51,10 +51,10 @@ public class Modele {
     		ObsGenAsync canal = new Canal(service, timeToTravel);
     		canaux.add(canal);
     	}
-    	ObsGen aff1 = new Afficheur(canaux.get(0),Afficheur1);
-    	ObsGen aff2 = new Afficheur(canaux.get(1),Afficheur2);
-    	ObsGen aff3 = new Afficheur(canaux.get(2),Afficheur3);
-    	ObsGen aff4 = new Afficheur(canaux.get(3),Afficheur4);
+    	ObsGen aff1 = new Monitor(canaux.get(0),Afficheur1);
+    	ObsGen aff2 = new Monitor(canaux.get(1),Afficheur2);
+    	ObsGen aff3 = new Monitor(canaux.get(2),Afficheur3);
+    	ObsGen aff4 = new Monitor(canaux.get(3),Afficheur4);
     	afficheur.add(aff1);
     	afficheur.add(aff2);
     	afficheur.add(aff3);
