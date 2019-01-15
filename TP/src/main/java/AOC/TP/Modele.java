@@ -47,7 +47,7 @@ public class Modele {
     	afficheur = new ArrayList<ObsGen>();
     	int timeToTravel;
     	for(int i = 0; i < nbCanaux; i++) {
-    		timeToTravel =  new Random().nextInt(300 - 100) + 400;
+    		timeToTravel =  new Random().nextInt(700 - 100) + 400;
     		ObsGenAsync canal = new Canal(service, timeToTravel);
     		canaux.add(canal);
     	}
@@ -59,7 +59,7 @@ public class Modele {
     	afficheur.add(aff2);
     	afficheur.add(aff3);
     	afficheur.add(aff4);
-		Generator gen = new Generator(canaux);
+		Generator gen = new Generator(canaux, true); 
 		generator = gen;
 		AtomiStrat.setSelected(true);
 		SeqStrat.setSelected(false);

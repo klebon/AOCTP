@@ -11,24 +11,12 @@ public class MementoGenerator implements IGenerator {
 	}
 	
 	public int getValue() {
-		// TODO Auto-generated method stub
 		return value;
 	}
 
 	public void setValue(int value) {
 		// TODO Auto-generated method stub
 		this.value = value;
-	}
-
-	public void Update() throws Exception {
-		// TODO Auto-generated method stub
-		
-	}
-
-	public void go() {
-		// TODO Auto-generated method stub
-		
-	}
-	
+	}	
 
 }
